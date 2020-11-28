@@ -3,7 +3,7 @@
 
 #Código
 
-#ADICINAR MOD ESCURO E CLARO
+
 from tkinter import *
 import random
 from time import sleep
