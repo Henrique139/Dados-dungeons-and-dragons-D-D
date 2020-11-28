@@ -3,24 +3,68 @@
 
 #Código
 
+#ADICINAR MOD ESCURO E CLARO
 from tkinter import *
 import random
-import sys
-import os
+from time import sleep
+
 #/\importações usadas no script
 
 #\/-Tela
 janela=Tk()
-janela.title("DADOS D&D")
+janela.title("DADOS")
 janela.attributes("-fullscreen",True)
-
+janela["bg"]="white"
 
 
 #Funções usadas no script    
 
+def escuro():    
+    sleep(1)
+    lb["bg"]="black"
+    lb2["bg"]="black"
+    lb3["bg"]="black"
+    lb4["bg"]="black"
+    lb5["bg"]="black"
+    lb6["bg"]="black"
+    lb7["bg"]="black"
+    bf["bg"]="black"
+    titulo["bg"]="black"
+    janela["bg"]="black"
+    lb["fg"]="white"
+    lb2["fg"]="white"
+    lb3["fg"]="white"
+    lb4["fg"]="white"
+    lb5["fg"]="white"
+    lb6["fg"]="white"
+    lb7["fg"]="white"
+    bf["fg"]="white"
+    titulo["fg"]="white"    
+    
+def claro():
+    sleep(1)    
+    lb["bg"]="white"
+    lb2["bg"]="white"
+    lb3["bg"]="white"
+    lb4["bg"]="white"
+    lb5["bg"]="white"
+    lb6["bg"]="white"
+    lb7["bg"]="white"    
+    bf["bg"]="white"    
+    lb["fg"]="black"
+    lb2["fg"]="black"
+    lb3["fg"]="black"
+    lb4["fg"]="black"
+    lb5["fg"]="black"
+    lb6["fg"]="black"
+    lb7["fg"]="black"
+    bf["fg"]="black"
+    titulo["fg"]="black"    
+    titulo["bg"]="white"
+    janela["bg"]="white"
+        
 def sair():
-    python = sys.executable
-    os.execl(python, python, * sys.argv)
+    janela.destroy()
 
 def D4():
     lb["text"]=random.randint(1,4)
@@ -41,14 +85,24 @@ def D20():
     lb6["text"]=random.randint(1,20)
     
 def custom():    
-    pa1=int(p1.get())
-    pa2=int(p2.get())  
-    bf["text"]=random.randint(pa1,pa2)
-    
-        
+
+#tentativa de gerar número customizado 
+    try:
+        bf["fg"]="black"
+        pa1=int(p1.get())
+        pa2=int(p2.get())  
+        bf["text"]=random.randint(pa1,pa2)
+
+#caso ocorra algum erro               
+    except:
+        bf["fg"]="red"
+        bf["text"]="ERRO!"
+
+#fim das funções
+                
 #Título
-titulo=Label(janela,width=85,text="DADOS D&D")
-titulo.place(x=-450,y=45)
+titulo=Label(janela,width=85,text="DADOS"+" \n"+"DUNGEONS AND DRAGONS")
+titulo.pack(side=TOP)
 
 #Botão D4
 bt=Button(janela,width=5,text="D4",command=D4)
@@ -123,11 +177,22 @@ bf.place(x=500,y=530)
 
 #FIM DA PARTE CUSTOMIZÁVEL
 
-#Botão de sair
-sair=Button(janela,width=5,text="SAIR",command=sair)
-sair.place(x=30,y=870)
+#Botão do modo claro 
 
-#cores
+bt6=Button(janela,width=5,text="claro",command=claro)
+bt6.place(x=473,y=700)
+
+#Botão do modo escuro
+
+bt7=Button(janela,width=5,text="escuro",command=escuro)
+bt7.place(x=473,y=800)
+
+#Botão de sair
+
+sair=Button(janela,width=36,height=2,text="F E C H A R",command=sair)
+sair.pack(side=BOTTOM)
+
+#cor padrão
 
 p1["bg"]="light gray"
 p2["bg"]="light gray"
