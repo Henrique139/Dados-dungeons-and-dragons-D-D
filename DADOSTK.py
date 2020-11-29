@@ -3,11 +3,8 @@
 
 #Código
 
-
 from tkinter import *
 import random
-from time import sleep
-
 #/\importações usadas no script
 
 #\/-Tela
@@ -20,7 +17,6 @@ janela["bg"]="white"
 #Funções usadas no script    
 
 def escuro():    
-    sleep(1)
     lb["bg"]="black"
     lb2["bg"]="black"
     lb3["bg"]="black"
@@ -37,12 +33,11 @@ def escuro():
     lb4["fg"]="white"
     lb5["fg"]="white"
     lb6["fg"]="white"
-    lb7["fg"]="white"
+    lb7["fg"]="white"    
     bf["fg"]="white"
     titulo["fg"]="white"    
     
 def claro():
-    sleep(1)    
     lb["bg"]="white"
     lb2["bg"]="white"
     lb3["bg"]="white"
@@ -57,7 +52,7 @@ def claro():
     lb4["fg"]="black"
     lb5["fg"]="black"
     lb6["fg"]="black"
-    lb7["fg"]="black"
+    lb7["fg"]="black"  
     bf["fg"]="black"
     titulo["fg"]="black"    
     titulo["bg"]="white"
